@@ -151,16 +151,9 @@ export default defineConfig(({ mode }) => ({
             }
           },
           {
-            // Network first for auth calls
+            // Auth calls must NEVER be cached or timed out by the service worker
             urlPattern: /^https:\/\/.*\.supabase\.co\/auth\/.*/i,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "supabase-auth-cache",
-              networkTimeoutSeconds: 5,
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
+            handler: "NetworkOnly"
           },
           {
             // Cache learning materials storage - long term

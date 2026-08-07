@@ -173,6 +173,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     // Try online authentication first
     if (navigator.onLine) {
+      let networkFailed = false;
       try {
         const { data, error } = await supabase.auth.signInWithPassword({
           email,
@@ -180,19 +181,25 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         });
 
         if (error) {
-          return { success: false, error: error.message };
+          // Only fall through to offline auth on genuine network failures
+          const isNetworkError =
+            error.message?.toLowerCase().includes('failed to fetch') ||
+            error.message?.toLowerCase().includes('network');
+          if (!isNetworkError) {
+            return { success: false, error: error.message };
+          }
+          networkFailed = true;
         }
 
         // Cache auth for offline use after successful login
-        if (data.user) {
+        if (!networkFailed && data?.user) {
           const userProfile = await fetchUserProfile(data.user.id);
           if (userProfile) {
             await cacheAuthData(email, passwordHash, userProfile);
           }
+          setIsOfflineAuth(false);
+          return { success: true };
         }
-
-        setIsOfflineAuth(false);
-        return { success: true };
       } catch (error) {
         // Network error - try offline auth
         console.log('Network error, trying offline auth...');
@@ -206,7 +213,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       if (!cachedAuth) {
         return { 
           success: false, 
-          error: 'No cached credentials found. Please connect to the internet to log in.' 
+          error: "Couldn't reach the server. Please check your connection and try again." 
         };
       }
 
