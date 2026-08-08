@@ -240,7 +240,7 @@ const TeacherDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs defaultValue="dashboard" className="animate-slide-up">
-          <TabsList className="mb-4 flex-wrap">
+          <TabsList className="mb-4 w-full sm:w-auto">
             <TabsTrigger value="dashboard" className="gap-2">
               <LayoutDashboard size={16} />
               Dashboard

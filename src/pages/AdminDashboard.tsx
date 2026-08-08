@@ -354,7 +354,7 @@ const AdminDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs defaultValue="lockers" className="animate-slide-up">
-          <TabsList className="grid w-full grid-cols-6 lg:w-auto lg:inline-grid">
+          <TabsList className="w-full lg:w-auto">
             <TabsTrigger value="lockers" className="gap-2">
               <Lock size={16} />
               <span className="hidden sm:inline">Lockers</span>

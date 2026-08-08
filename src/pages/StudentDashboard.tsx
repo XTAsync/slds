@@ -45,14 +45,14 @@ const StudentDashboard: React.FC = () => {
       <SEOHead title="Student Dashboard" description="Access your locker, assignments, exams, and learning materials." path="/student" noIndex />
       <Header />
       
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-5 sm:space-y-6">
         {/* Welcome section */}
         <div className="animate-fade-in">
-          <div className="flex items-center gap-3 mb-1">
-            <Backpack className="text-primary" size={28} />
-            <h1 className="text-2xl font-bold">Welcome, {currentUser?.name}</h1>
+          <div className="flex items-center gap-3 mb-1 min-w-0">
+            <Backpack className="text-primary shrink-0" size={24} />
+            <h1 className="text-xl sm:text-2xl font-bold truncate">Welcome, {currentUser?.name}</h1>
           </div>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
               <Calendar size={14} />
               {format(new Date(), 'EEEE, MMMM d, yyyy')}
@@ -66,7 +66,7 @@ const StudentDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs defaultValue="desk" className="animate-slide-up">
-          <TabsList className="mb-4 flex-wrap">
+          <TabsList className="mb-4 w-full sm:w-auto">
             <TabsTrigger value="desk" className="gap-2">
               <Monitor size={16} />
               Smart Desk
@@ -87,7 +87,7 @@ const StudentDashboard: React.FC = () => {
 
           <TabsContent value="desk">
             {/* Main content grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Left column - Locker and quick info */}
               <div className="space-y-6">
                 {/* My Locker */}
