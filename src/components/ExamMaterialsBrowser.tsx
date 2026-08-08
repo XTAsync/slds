@@ -393,7 +393,7 @@ export const ExamMaterialsBrowser: React.FC<ExamMaterialsBrowserProps> = ({ onCl
     <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm animate-fade-in">
       <div className="h-full flex flex-col max-w-4xl mx-auto">
         {/* Toolbar */}
-        <div className="flex items-center gap-2 p-3 border-b bg-card">
+        <div className="flex flex-wrap items-center gap-2 p-3 border-b bg-card">
           {viewMode !== 'home' && (
             <Button variant="ghost" size="sm" onClick={goBack}>
               <ChevronLeft size={16} className="mr-1" />
@@ -401,13 +401,13 @@ export const ExamMaterialsBrowser: React.FC<ExamMaterialsBrowserProps> = ({ onCl
             </Button>
           )}
           
-          <div className="flex-1 flex items-center gap-2">
+          <div className="flex-1 flex items-center gap-2 min-w-0">
             <CheckCircle2 className="text-success" size={18} />
-            <span className="text-sm font-medium">Exam Materials Browser</span>
+            <span className="text-sm font-medium truncate">Exam Materials</span>
           </div>
 
           {viewMode !== 'home' && (
-            <div className="flex-1 max-w-md mx-4">
+            <div className="w-full sm:flex-1 sm:max-w-md sm:mx-4">
               <div className="flex gap-2">
                 <Input
                   type="text"

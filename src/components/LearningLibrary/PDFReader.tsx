@@ -111,12 +111,12 @@ export const PDFReader: React.FC<PDFReaderProps> = ({ blob, title, onClose }) =>
   }, [fileUrl]);
 
   return (
-    <Card className={cn('flex flex-col', isFullscreen ? 'fixed inset-0 z-50 rounded-none' : 'h-[calc(100vh-200px)]')}>
+    <Card className={cn('flex flex-col', isFullscreen ? 'fixed inset-0 z-50 rounded-none' : 'h-[70vh] sm:h-[calc(100vh-200px)]')}>
       {/* Header */}
-      <CardHeader className="flex-shrink-0 pb-2">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-lg truncate pr-4">{title}</CardTitle>
-          <div className="flex items-center gap-1">
+      <CardHeader className="flex-shrink-0 pb-2 px-3 sm:px-6">
+        <div className="flex items-center justify-between gap-2">
+          <CardTitle className="text-base sm:text-lg truncate pr-2">{title}</CardTitle>
+          <div className="flex items-center gap-1 shrink-0">
             <Button variant="ghost" size="icon" onClick={downloadFile} title="Download">
               <Download className="h-4 w-4" />
             </Button>

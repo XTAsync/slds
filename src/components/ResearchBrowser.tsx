@@ -268,8 +268,8 @@ export const ResearchBrowser: React.FC<ResearchBrowserProps> = ({ onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-      <div className="w-full max-w-4xl h-[85vh] bg-card border rounded-xl shadow-2xl flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-0 sm:p-4 animate-fade-in">
+      <div className="w-full max-w-4xl h-full sm:h-[85vh] bg-card border sm:rounded-xl shadow-2xl flex flex-col overflow-hidden">
         {/* Browser toolbar */}
         <div className="bg-muted/50 border-b p-2 space-y-2">
           {/* Top bar */}
