@@ -72,24 +72,24 @@ export const DeskInterface: React.FC = () => {
       {/* Mode indicator header */}
       <div 
         className={cn(
-          'p-4 flex items-center justify-between',
+          'p-4 flex flex-wrap items-center justify-between gap-3',
           examMode 
             ? 'bg-warning/10 border-b border-warning/20' 
             : 'bg-primary/5 border-b border-primary/10'
         )}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 min-w-0">
           <div 
             className={cn(
-              'w-12 h-12 rounded-xl flex items-center justify-center',
+              'w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0',
               examMode ? 'bg-warning/20 text-warning' : 'bg-primary/20 text-primary'
             )}
           >
             <Monitor size={24} />
           </div>
-          <div>
-            <h3 className="font-semibold text-lg">Smart Desk Terminal</h3>
-            <p className="text-sm text-muted-foreground">
+          <div className="min-w-0">
+            <h3 className="font-semibold text-base sm:text-lg">Smart Desk Terminal</h3>
+            <p className="text-xs sm:text-sm text-muted-foreground">
               {examMode ? 'Restricted access - Exam in progress' : 'Full access - Normal operation'}
             </p>
           </div>
@@ -100,7 +100,7 @@ export const DeskInterface: React.FC = () => {
         />
       </div>
 
-      <CardContent className="p-6 space-y-6">
+      <CardContent className="p-4 sm:p-6 space-y-5 sm:space-y-6">
         {/* Exam mode warning banner */}
         {examMode && (
           <div className="flex items-start gap-3 p-4 bg-warning/10 border border-warning/20 rounded-lg animate-fade-in">
@@ -116,7 +116,7 @@ export const DeskInterface: React.FC = () => {
         )}
 
         {/* Action buttons grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Research action - blocked in exam mode */}
           <div 
             className={cn(
