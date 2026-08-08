@@ -32,27 +32,35 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
         className
       )}
     >
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-3 sm:px-4 h-14 sm:h-16 flex items-center justify-between gap-2">
         {/* Logo and branding */}
-        <div className="flex items-center gap-3">
-          <img src={sldsLogo} alt="SLDS Logo" className="w-12 h-12 object-contain" />
-          <div>
-            <h1 className="font-bold text-lg leading-tight">SLDS</h1>
-            <p className="text-xs text-muted-foreground">Smart Locker Desk System</p>
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img src={sldsLogo} alt="SLDS Logo" className="w-9 h-9 sm:w-12 sm:h-12 object-contain shrink-0" />
+          <div className="min-w-0">
+            <h1 className="font-bold text-base sm:text-lg leading-tight">SLDS</h1>
+            <p className="hidden sm:block text-xs text-muted-foreground truncate">Smart Locker Desk System</p>
           </div>
         </div>
 
         {/* User info and controls */}
         {currentUser && (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             {/* Exam mode indicator */}
             {examMode && (
-              <StatusBadge 
-                variant="exam" 
-                label="Exam Mode Active"
-                size="md"
-                className="animate-pulse-glow"
-              />
+              <>
+                <StatusBadge
+                  variant="exam"
+                  label="Exam Mode Active"
+                  size="md"
+                  className="animate-pulse-glow hidden sm:inline-flex"
+                />
+                <StatusBadge
+                  variant="exam"
+                  label="Exam"
+                  size="sm"
+                  className="animate-pulse-glow sm:hidden"
+                />
+              </>
             )}
             
             {/* Notification bell for students */}
@@ -61,18 +69,18 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
             )}
             
             {/* User badge */}
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full">
+            <div className="flex items-center gap-2 px-2 sm:px-3 py-1.5 bg-secondary rounded-full min-w-0">
               {currentUser.role === 'admin' ? (
-                <ShieldCheck size={16} className="text-primary" />
+                <ShieldCheck size={16} className="text-primary shrink-0" />
               ) : currentUser.role === 'teacher' ? (
-                <GraduationCap size={16} className="text-primary" />
+                <GraduationCap size={16} className="text-primary shrink-0" />
               ) : (
-                <User size={16} className="text-muted-foreground" />
+                <User size={16} className="text-muted-foreground shrink-0" />
               )}
-              <span className="text-sm font-medium">{currentUser.name}</span>
+              <span className="text-sm font-medium truncate max-w-[80px] sm:max-w-none">{currentUser.name}</span>
               <span 
                 className={cn(
-                  'text-xs px-2 py-0.5 rounded-full',
+                  'hidden sm:inline text-xs px-2 py-0.5 rounded-full',
                   currentUser.role === 'admin'
                     ? 'bg-primary/10 text-primary'
                     : currentUser.role === 'teacher' 
@@ -89,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
               variant="outline" 
               size="sm" 
               onClick={logout}
-              className="gap-2"
+              className="gap-2 shrink-0 px-2 sm:px-3"
             >
               <LogOut size={16} />
               <span className="hidden sm:inline">Logout</span>

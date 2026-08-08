@@ -219,7 +219,7 @@ const TeacherDashboard: React.FC = () => {
       <SEOHead title="Teacher Dashboard" description="Manage exams, assignments, lockers, and monitor student activity." path="/teacher" noIndex />
       <Header />
       
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-5 sm:space-y-6">
         {/* Welcome section */}
         <div className="animate-fade-in">
           <div className="flex items-center gap-3 mb-1">
@@ -240,7 +240,7 @@ const TeacherDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs defaultValue="dashboard" className="animate-slide-up">
-          <TabsList className="mb-4 flex-wrap">
+          <TabsList className="mb-4 w-full sm:w-auto">
             <TabsTrigger value="dashboard" className="gap-2">
               <LayoutDashboard size={16} />
               Dashboard

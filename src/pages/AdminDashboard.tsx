@@ -258,7 +258,7 @@ const AdminDashboard: React.FC = () => {
       <SEOHead title="Admin Dashboard" description="Full system administration for the Smart Locker Desk System." path="/admin" noIndex />
       <Header />
       
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-5 sm:space-y-6">
         {/* Welcome section */}
         <div className="animate-fade-in">
           <div className="flex items-center gap-3 mb-1">
@@ -278,7 +278,7 @@ const AdminDashboard: React.FC = () => {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 animate-slide-up">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 animate-slide-up">
           <Card>
             <CardContent className="pt-4 pb-3">
               <div className="flex items-center justify-between">
@@ -354,30 +354,30 @@ const AdminDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs defaultValue="lockers" className="animate-slide-up">
-          <TabsList className="grid w-full grid-cols-6 lg:w-auto lg:inline-grid">
+          <TabsList className="w-full lg:w-auto">
             <TabsTrigger value="lockers" className="gap-2">
               <Lock size={16} />
-              <span className="hidden sm:inline">Lockers</span>
+              <span >Lockers</span>
             </TabsTrigger>
             <TabsTrigger value="users" className="gap-2">
               <Users size={16} />
-              <span className="hidden sm:inline">Users</span>
+              <span >Users</span>
             </TabsTrigger>
             <TabsTrigger value="materials" className="gap-2">
               <BookOpen size={16} />
-              <span className="hidden sm:inline">Materials</span>
+              <span >Materials</span>
             </TabsTrigger>
             <TabsTrigger value="feedback" className="gap-2">
               <MessageSquare size={16} />
-              <span className="hidden sm:inline">Feedback</span>
+              <span >Feedback</span>
             </TabsTrigger>
             <TabsTrigger value="controls" className="gap-2">
               <Settings size={16} />
-              <span className="hidden sm:inline">Controls</span>
+              <span >Controls</span>
             </TabsTrigger>
             <TabsTrigger value="activity" className="gap-2">
               <Activity size={16} />
-              <span className="hidden sm:inline">Activity</span>
+              <span >Activity</span>
             </TabsTrigger>
           </TabsList>
 
