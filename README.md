@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="slds logo" width="180" />
+</p>
+
 # Smart Desk Learning System (SLDS)
 
 A school-focused web application that brings student, teacher, and administrator workflows into one place, with tools for learning-resource access and classroom management.
