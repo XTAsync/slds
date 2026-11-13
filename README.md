@@ -1,49 +1,45 @@
-## Project info
+# Smart Desk Learning System (SLDS)
 
+A school-focused web application that brings student, teacher, and administrator workflows into one place, with tools for learning-resource access and classroom management.
 
-**Use your preferred IDE**
+## Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Role-based student, teacher, and administrator areas
+- Authenticated access and protected application routes
+- Learning-resource and school workflow support
+- Offline-aware experience and installable PWA support
+- Activity, feedback, and administrative tools
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Technology
 
-Follow these steps:
+- React 18 and TypeScript
+- Vite
+- Supabase
+- React Router and TanStack Query
+- Tailwind CSS
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Requirements: Node.js and npm.
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/XTAsync/slds.git
+cd slds
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run dev       # Start the development server
+npm run build     # Create a production build
+npm run lint      # Run ESLint
+npm run preview   # Preview the production build
+```
 
-**Use GitHub Codespaces**
+Supabase-backed functionality requires valid project configuration. Keep credentials in local environment configuration and never commit secrets.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Status
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
+This repository contains an actively developed application. Feature availability may vary by module.
